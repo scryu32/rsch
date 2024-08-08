@@ -168,6 +168,30 @@ div {
   cursor: pointer;
 }
 
+@media (max-width: 2400px) {
+  .back-doc-box {
+    top: 800px;
+  }
+
+  .card {
+    height: 580px;
+  }
+
+}
+
+
+@media (max-width: 1800px) {
+  .back-doc-box {
+    top: 900px;
+  }
+
+  .card {
+    height: 540px;
+  }
+
+}
+
+
 @media (max-width: 1440px) {
   .back-doc-box {
     top: 800px;

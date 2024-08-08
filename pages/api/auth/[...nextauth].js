@@ -6,11 +6,11 @@ import GithubProvider from "next-auth/providers/github";
 export const authOptions = {
   providers: [
     GithubProvider({
-      clientId: 'Iv23liSmxjrzBpNZoNIO',
-      clientSecret: '9af2e7ce0e8625515703aa857d9428e4ee684130',
+      clientId: '',
+      clientSecret: '',
     }),
   ],
-  secret : 'asfsasaf2fsdv23ef23',
+  secret : '',
   adapter : MongoDBAdapter(connectDB),
 };
 

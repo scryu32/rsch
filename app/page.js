@@ -1,15 +1,11 @@
-import Image from 'next/image'
+import bg from '@/public/HuTao/HuTao_Background.png'
+import { Backgrrrrr } from './Backgroud'
 
-export default function(){
+export default function MainPage(){
   return (
     <div className="main-page">
 
-      <div>
-        <div className="back-ground-box">
-          <h4>Welcome to Rsch Site!</h4>
-          <p>Made by 유성찬</p>
-        </div>
-      </div>
+      <Backgrrrrr/>
 
       <div className='back-doc-box'>
 

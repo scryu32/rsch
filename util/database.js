@@ -1,6 +1,6 @@
 import { MongoClient } from 'mongodb'
-const url = ''
-const options = {  }
+const url = 'mongodb+srv://scryu32:qweaaa121@dpcm.ywnz9oe.mongodb.net/?retryWrites=true&w=majority&appName=dpcm';
+const options = { useNewUrlParser: true }
 let connectDB
 
 if (process.env.NODE_ENV === 'development') {

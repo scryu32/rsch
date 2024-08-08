@@ -3,9 +3,14 @@ import "./globals.css";
 import "./nomalize.css";
 import Image from 'next/image'
 import hutao from '@/public/HuTao/HuTao_emoji1.png'
+import { LoginBtn, LogoutBtn } from "./LoginBtn"
+import { getServerSession } from "next-auth"
+import { authOptions } from "@/pages/api/auth/[...nextauth]"
 
 
-export default function RootLayout({ children }) {
+
+export default async function RootLayout({ children }) {
+  let session = await getServerSession(authOptions);
   return (
     <html lang="ko">
       <body className='layout'>
@@ -41,7 +46,13 @@ export default function RootLayout({ children }) {
                   <p>GitHub</p>
                 </a>
               </li>
-              
+              <li>
+                { 
+                  session 
+                    ? <span>{session.user.name} <LogoutBtn/> </span> 
+                    : <LoginBtn></LoginBtn>
+                }
+              </li>
             </ul>
         </nav>
         {children}

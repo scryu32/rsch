@@ -10,20 +10,39 @@ export default function RootLayout({ children }) {
     <html lang="ko">
       <body className='layout'>
         <nav className="navbar">
-          <div>
-            <a className="logo-img" href="#">
-            <Image src={hutao} width="50" height="50" className="img-logo"></Image>
-            </a>
-            <a href="#" className="Logo">
-              <h4>Rsch Site</h4>
-            </a>
-            <a href="#" className="not-Logo">
-              <p>Chat</p>
-            </a>
-            <a href="https://www.instagram.com/coding_sc/" className="not-Logo" target="_batch">
-              <p>Instagram</p>
-            </a>
-          </div>
+            <ul className="nav">
+              <li>
+                <a className="logo-img" href="#">
+                  <Image src={hutao} width="50" height="50" className="img-logo"></Image>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="Logo">
+                  <h4>Rsch Site</h4>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="not-Logo">
+                  <p>Project</p>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="not-Logo">
+                  <p>Comments</p>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/coding_sc/" className="not-Logo" target="_batch">
+                  <p>Instagram</p>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/scryu32/rsch" className="not-Logo" target="_batch">
+                  <p>GitHub</p>
+                </a>
+              </li>
+              
+            </ul>
         </nav>
         {children}
         </body>

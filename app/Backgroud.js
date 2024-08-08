@@ -13,15 +13,6 @@ export function Backgrrrrr() {
       </div>
 
       <style jsx>{`
-        .back-ground-box {
-          position: relative;
-          height: calc(100vh - 80px);
-          padding-top: 80px;
-          color: white;
-          text-align: center;
-          z-index: 2;
-        }
-
         .back-ground-box::before {
           content: "";
           position: fixed;

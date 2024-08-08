@@ -49,7 +49,7 @@ export default async function RootLayout({ children }) {
               <li>
                 { 
                   session 
-                    ? <span>{session.user.name} <LogoutBtn/> </span> 
+                    ? <LogoutBtn/> 
                     : <LoginBtn></LoginBtn>
                 }
               </li>

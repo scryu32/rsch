@@ -210,7 +210,7 @@ div {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 870px) {
   .back-doc-box {
     top: 700px;
     height: 3000px;
@@ -221,7 +221,43 @@ div {
   
   .card {
     width: 80%;
+    height: 750px;
+  }
+
+  .back-ground-box h4{
+    font-size: 50px;
+    top: 40%;
+    width: 80%;
+  }
+  
+  .back-ground-box p{
+    font-size: 25px;
+    z-index: 2;
+    top: 45%;
+  }
+}
+
+@media (max-width: 775px) {
+  .card {
     height: 700px;
+  }
+}
+
+@media (max-width: 700px) {
+  .card {
+    height: 650px;
+  }
+  .back-ground-box h4{
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 630px) {
+  .card {
+    height: 610px;
+  }
+  .back-ground-box h4{
+    font-size: 40px;
   }
 }
 
@@ -236,7 +272,7 @@ div {
   
   .card {
     width: 80%;
-    height: 550px;
+    height: 580px;
   }
 
   .back-ground-box h4{

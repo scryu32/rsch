@@ -14,18 +14,18 @@ export default function MainPage(){
 
           <div className='card'>
             <h4>What I Do?</h4>
-            <img src='./HuTao/HuTao_emoji9.png' alt='profile' className='CardImage'></img>
+            <img src='./Images/htmlimg.png' alt='profile' className='CardImage'></img>
             <p>
               현재는 프론드엔드 위주로 공부하고있습니다.
               할줄 아는 언어들은 Python과 JS 할줄알고, C++ 조금 할줄 압니다.
-              프레임워크는 Next.js 사용할줄알고, 나중에 Django 배울 예정입니다.
+              프레임워크는 Next.js 사용할줄알고, 나중에 Spring Boot 배울 예정입니다.
               이 프로젝트 완성하면 React랑 크롤링 공부해서 취미로 외주 받을 계획입니다.
             </p>
           </div>
 
           <div className='card'>
             <h4>What I Interested In?</h4>
-            <img src='./HuTao/HuTao_emoji2.png' alt='profile' className='CardImage'></img>
+            <img src='./Images/AI_icon.png' alt='profile' className='CardImage'></img>
             <p>
               가장 관심있는 분야는 AI입니다.
               AI에서 가장 공부 많이한 분야는 Fine-tuning이나 프롬프트 엔지니어링같이
@@ -36,7 +36,7 @@ export default function MainPage(){
 
           <div className='card'>
             <h4>About ChatBot</h4>
-            <img src='./HuTao/HuTao_emoji5.png' alt='profile' className='CardImage'></img>
+            <img src='./HuTao/HuTao_emoji2.png' alt='profile' className='CardImage'></img>
             <p>
               챗봇 모델은 사진에있는 호두라는 친구고,
               말투를 Fine-tuning으로 훈련시켰습니다.

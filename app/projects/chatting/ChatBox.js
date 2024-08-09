@@ -65,12 +65,14 @@ export default function ChatBox() {
             <div className="messages-box" style={{overflowY: 'scroll', padding: '10px' }}>
                 {messages.map((msg, index) => (
                     <div key={index} className={`message ${msg.role}`} style={{ marginBottom: '10px', display: 'flex', justifyContent: msg.role === "user" ? 'flex-end' : 'flex-start' }}>
+                        <img src='../HuTao/HuTao_emoji9.png' style={{width:'40px', height:'40px', display: msg.role === "user" ? 'none' : 'block', padding:'3px', boxSizing:'border-box'}}></img>
                         <div 
                             style={{
                                 padding: '10px',
                                 borderRadius: '5px',
                                 backgroundColor: msg.role === "user" ? '#d1e7dd' : '#f8d7da',
-                                color: msg.role === "user" ? '#0f5132' : '#721c24'
+                                color: msg.role === "user" ? '#0f5132' : '#721c24',
+                                maxWidth: '70%',
                             }}
                         >
                             {msg.content}

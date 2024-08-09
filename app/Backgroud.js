@@ -1,6 +1,6 @@
 'use client';
 
-import bg from '@/public/HuTao/HuTao_Background.png';
+import bg from '@/public/Images/BackGround.png';
 
 export function Backgrrrrr() {
   return (

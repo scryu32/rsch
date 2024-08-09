@@ -13,8 +13,8 @@ export function ListBar() {
     };
     return (
         <div>
-            <button className="nav-button" onClick={toggleShow}>list</button>
-            <div className={`black-background ${isShown ? 'show' : ''}`}>
+            <button className={`nav-button ${isShown ? '' : 'showbar'}`} onClick={toggleShow}>list</button>
+            <div className={`black-background ${isShown ? 'show' : ''}`} onClick={toggleShow}>
                 <div className={`list-bar ${isShown ? 'show' : ''}`}>
                     <div className = 'list-bar-objects'>
                         <a className="logo-img" href="/">

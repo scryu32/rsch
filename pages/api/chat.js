@@ -30,8 +30,6 @@ export default async function handler(req, res) {
           frequency_penalty: 0,
           presence_penalty: 0,
         });
-
-        console.log(response);
         
         return res.status(200).json(response);
       } catch (error) {

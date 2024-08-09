@@ -92,6 +92,10 @@ div {
 .img-logo-list {
   padding-top:50px;
 }
+
+.showbar {
+  display: none;
+}
 /*main page*/
 
 .logo-img img {
@@ -321,6 +325,9 @@ div {
     top: 35%;
     right: 80px;
   }
+  .showbar {
+    display: block;
+  }
 }
 
 @media (max-width: 630px) {
@@ -377,7 +384,7 @@ div {
   }
 }
 
-/*프로젝트 페이지*/
+/*프로젝트 페이지 */
 
 .container {
   padding: 5px;
@@ -393,6 +400,9 @@ div {
   text-decoration: none;
   color: black;
 }
+
+
+/*챗봇*/
 
 .chatting-card {
   width: 80vw;
@@ -411,7 +421,7 @@ div {
   width: 100%;
   position: absolute;
   bottom: 10px;
-  left: 10px;
+  left: 0px;
 }
 
 .input-box {
@@ -425,3 +435,20 @@ div {
 .messages-box {
   height: 95%;
 }
+
+@media (max-width : 500px) {
+  .chatting-card {
+    height: 500px;
+  }
+}
+
+@media (max-width : 430px) {
+  .input-box {
+    width: 65%;
+  }
+  
+  .submit-btn {
+    width: 20%;
+  }
+}
+

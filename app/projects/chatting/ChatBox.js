@@ -14,28 +14,47 @@ export default function ChatBox() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
         const userMessage = { role: 'user', content: input };
         
         setInput('');
-
+    
         try {
             setMessages((prevMessages) => [...prevMessages, userMessage]);
-            
-            const res = await fetch('/api/chat', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ messages: [...messages, userMessage] }),
-            });
-
-            if (!res.ok) throw new Error('Network response was not ok');
-
-            const data = await res.json();
-            const assistantMessage = { role: 'assistant', content: data.choices[0].message.content };
-
-            setMessages((prevMessages) => [...prevMessages, assistantMessage]);
+    
+            const sessionRes = await fetch('/api/checklogin');
+    
+            if (!sessionRes.ok) {
+                const sessionData = await sessionRes.json();
+                if (sessionRes.status === 401) {
+                    const assistantMessage = { role: 'assistant', content: '로그인 하세요.' };
+                    setMessages((prevMessages) => [...prevMessages, assistantMessage]);
+                    return;
+                }
+                throw new Error(sessionData.message || 'Failed to check login status');
+            }
+    
+            const sessionData = await sessionRes.json();
+    
+            if (sessionData.session) { 
+                const res = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ messages: [...messages, userMessage] }),
+                });
+    
+                if (!res.ok) throw new Error('Network response was not ok');
+    
+                const data = await res.json();
+                const assistantMessage = { role: 'assistant', content: data.choices[0].message.content };
+    
+                setMessages((prevMessages) => [...prevMessages, assistantMessage]);
+            } else {
+                const assistantMessage = { role: 'assistant', content: '로그인 하세요.' };
+                setMessages((prevMessages) => [...prevMessages, assistantMessage]);
+            }
         } catch (error) {
             console.error('Error:', error);
         }

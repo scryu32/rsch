@@ -6,6 +6,7 @@ import hutao from '@/public/HuTao/HuTao_emoji1.png'
 import { LoginBtn, LogoutBtn } from "./LoginBtn"
 import { getServerSession } from "next-auth"
 import { authOptions } from "@/pages/api/auth/[...nextauth]"
+import { ListBar } from "./listbar";
 
 
 
@@ -18,7 +19,7 @@ export default async function RootLayout({ children }) {
             <ul className="nav">
               <li>
                 <a className="logo-img" href="/">
-                  <Image src={hutao} width="50" height="50" className="img-logo"></Image>
+                  <Image src={hutao} width="50" height="50" className="img-logo" alt="Logo-img"></Image>
                 </a>
               </li>
               <li>
@@ -53,8 +54,8 @@ export default async function RootLayout({ children }) {
                     : <LoginBtn></LoginBtn>
                 }
               </li>
-              <button className="nav-button">list</button>
             </ul>
+            <ListBar/>
         </nav>
         {children}
         </body>

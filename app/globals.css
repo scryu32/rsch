@@ -10,7 +10,6 @@ div {
   background-color: #eee;
   box-sizing: border-box;
   display: flex; 
-  align-items: center;
   position: fixed;
   z-index: 100;
 }
@@ -45,9 +44,54 @@ div {
 }
 
 .nav-button {
+  position: absolute;
+  display: none;
+  float: right;
+  padding: 5px;
+  width: 50px;
+  z-index: 300;
+}
+
+.black-background {
+  width: 100vw;
+  position: absolute;
+  height: 110vh;
+  background-color: rgba(0, 0, 0, 0.329);
   display: none;
 }
 
+.list-bar {
+  background-color: rgb(94, 94, 94);
+  position: absolute;
+  width: 230px;
+  height: 110vh;
+  z-index: 100;
+  right: -230px;
+  display: none;
+  transition: all 0.5s;
+}
+
+.list-bar div{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.list-bar button{
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.show {
+  display: block;
+  right: 0px;
+  transition: all 1s;
+}
+
+.img-logo-list {
+  padding-top:50px;
+}
 /*main page*/
 
 .logo-img img {
@@ -252,6 +296,9 @@ div {
 }
 
 @media (max-width: 700px) {
+  .nav-button {
+    display: block;
+  }
   .card {
     height: 650px;
   }

@@ -1,5 +1,6 @@
 import bg from '@/public/HuTao/HuTao_Background.png'
 import { Backgrrrrr } from './Backgroud'
+import Link from 'next/link'
 
 export default function MainPage(){
   return (
@@ -48,7 +49,9 @@ export default function MainPage(){
         </div>
         <div className='ChatBotGOGO'>
           <h4>챗봇을 사용해보고 싶다면?</h4>
-          <button>챗봇 바로가기</button>
+          <Link href="/projects">
+            <button>챗봇 바로가기</button>
+          </Link>
         </div>
       </div>
 

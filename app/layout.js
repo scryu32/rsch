@@ -17,22 +17,22 @@ export default async function RootLayout({ children }) {
         <nav className="navbar">
             <ul className="nav">
               <li>
-                <a className="logo-img" href="#">
+                <a className="logo-img" href="/">
                   <Image src={hutao} width="50" height="50" className="img-logo"></Image>
                 </a>
               </li>
               <li>
-                <a href="#" className="Logo">
+                <a href="/" className="Logo">
                   <h4>Rsch Site</h4>
                 </a>
               </li>
               <li>
-                <a href="#" className="not-Logo">
+                <a href="/projects" className="not-Logo">
                   <p>Project</p>
                 </a>
               </li>
               <li>
-                <a href="#" className="not-Logo">
+                <a href="/" className="not-Logo">
                   <p>Comments</p>
                 </a>
               </li>
@@ -53,6 +53,7 @@ export default async function RootLayout({ children }) {
                     : <LoginBtn></LoginBtn>
                 }
               </li>
+              <button className="nav-button">list</button>
             </ul>
         </nav>
         {children}

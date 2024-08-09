@@ -1,4 +1,3 @@
-import bg from '@/public/HuTao/HuTao_Background.png'
 import { Backgrrrrr } from './Backgroud'
 import Link from 'next/link'
 
@@ -12,7 +11,7 @@ export default function MainPage(){
 
         <div className="doc-box">
 
-          <div className='card'>
+          <div className='card first-card'>
             <h4>What I Do?</h4>
             <img src='./Images/htmlimg.png' alt='profile' className='CardImage'></img>
             <p>
@@ -23,7 +22,7 @@ export default function MainPage(){
             </p>
           </div>
 
-          <div className='card'>
+          <div className='card second-card'>
             <h4>What I Interested In?</h4>
             <img src='./Images/AI_icon.png' alt='profile' className='CardImage'></img>
             <p>
@@ -34,7 +33,7 @@ export default function MainPage(){
             </p>
           </div>
 
-          <div className='card'>
+          <div className='card third-card'>
             <h4>About ChatBot</h4>
             <img src='./HuTao/HuTao_emoji2.png' alt='profile' className='CardImage'></img>
             <p>

@@ -141,6 +141,21 @@ div {
   transform: translate(-50%, -50%);
 }
 
+.back-ground-box::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/Images/BackGround.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(50%);
+  z-index: 1;
+}
+
 /*카드 및 설명 작성*/
 
 .back-doc-box {
@@ -157,7 +172,6 @@ div {
 }
 
 .card {
-  margin: auto;
   margin-top: 100px;
   width: 23%;
   height: 700px;
@@ -196,12 +210,29 @@ div {
   transform: scale(1.05);
 }
 
+.first-card {
+  position: absolute;
+  left: 7.75%;
+}
+
+.second-card {
+  position: absolute;
+  left: 38.5%;
+}
+
+.third-card {
+  position: absolute;
+  left: 69%;
+}
+
 .ChatBotGOGO {
-  margin: auto;
-  margin-top: 150px;
+  position: absolute;
+  left: 30%;
+  right: 30%;
   width: 40%;
   height: 110px;
   z-index: 5;
+  top: 70%;
   text-align: center;
 }
 
@@ -271,13 +302,31 @@ div {
     top: 700px;
     height: 3000px;
   }
-  .doc-box {
-    display: block;
-  }
   
   .card {
     width: 80%;
     height: 750px;
+  }
+
+  .first-card {
+    position: absolute;
+    left: 10%;
+  }
+  
+  .second-card {
+    position: absolute;
+    left: 10%;
+    top: 850px;
+  }
+  
+  .third-card {
+    position: absolute;
+    left: 10%;
+    top: 1700px;
+  }
+  
+  .ChatBotGOGO {
+    top: 87%;
   }
 
   .back-ground-box h4{
@@ -291,6 +340,7 @@ div {
     z-index: 2;
     top: 45%;
   }
+
 }
 
 @media (max-width: 775px) {
@@ -365,6 +415,27 @@ div {
     top: 35%;
   }
 
+  .first-card {
+    position: absolute;
+    left: 10%;
+  }
+  
+  .second-card {
+    position: absolute;
+    left: 10%;
+    top: 680px;
+  }
+  
+  .third-card {
+    position: absolute;
+    left: 10%;
+    top: 1360px;
+  }
+  
+  .ChatBotGOGO {
+    top: 70%;
+  }
+
 }
 
 @media (max-width: 431px) {
@@ -372,6 +443,7 @@ div {
     width: 80%;
     height: 520px;
   }
+
 }
 
 @media (max-width: 400px) {
@@ -382,6 +454,28 @@ div {
   .card p{
     font-size: 15px;
   }
+
+  .first-card {
+    position: absolute;
+    left: 10%;
+  }
+  
+  .second-card {
+    position: absolute;
+    left: 10%;
+    top: 600px;
+  }
+  
+  .third-card {
+    position: absolute;
+    left: 10%;
+    top: 1200px;
+  }
+  
+  .ChatBotGOGO {
+    top: 70%;
+  }
+
 }
 
 /*프로젝트 페이지 */

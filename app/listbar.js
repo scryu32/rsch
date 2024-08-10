@@ -14,7 +14,7 @@ export function ListBar() {
     return (
         <div>
             <button className={`nav-button ${isShown ? '' : 'showbar'}`} onClick={toggleShow}>
-                <i class="fa-solid fa-bars"></i>
+                <i className="fa-solid fa-bars"></i>
             </button>
             <div className={`black-background ${isShown ? 'show' : ''}`} onClick={toggleShow}>
                 <div className={`list-bar ${isShown ? 'show-abc' : ''}`}>

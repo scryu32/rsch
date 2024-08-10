@@ -7,7 +7,7 @@ import { getServerSession } from "next-auth"
 import { authOptions } from "@/pages/api/auth/[...nextauth]"
 import { ListBar } from "./listbar";
 import "./ff/css/all.min.css"
-
+import { Analytics } from "@vercel/analytics/react"
 
 
 export default async function RootLayout({ children }) {
@@ -58,6 +58,7 @@ export default async function RootLayout({ children }) {
             <ListBar/>
         </nav>
         {children}
+        <Analytics />
         </body>
     </html>
   );

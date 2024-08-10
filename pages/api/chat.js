@@ -34,7 +34,7 @@ export default async function handler(req, res) {
         const completeMessages = [systemPrompt, ...messages];
 
         const response = await openai.chat.completions.create({
-          model: "ft:gpt-3.5-turbo-0125:personal:huasssss:9td6Acrc",
+          model: process.env.CHATBOTKEY,
           messages: completeMessages,
           temperature: 1,
           max_tokens: 1024,

@@ -1,4 +1,3 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 import "./nomalize.css";
 import Image from 'next/image'
@@ -7,6 +6,7 @@ import { LoginBtn, LogoutBtn } from "./LoginBtn"
 import { getServerSession } from "next-auth"
 import { authOptions } from "@/pages/api/auth/[...nextauth]"
 import { ListBar } from "./listbar";
+import "./ff/css/all.min.css"
 
 
 
@@ -33,7 +33,7 @@ export default async function RootLayout({ children }) {
                 </a>
               </li>
               <li>
-                <a href="/" className="not-Logo">
+                <a href="/comments" className="not-Logo">
                   <p>Comments</p>
                 </a>
               </li>

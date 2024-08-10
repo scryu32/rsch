@@ -13,7 +13,9 @@ export function ListBar() {
     };
     return (
         <div>
-            <button className={`nav-button ${isShown ? '' : 'showbar'}`} onClick={toggleShow}>list</button>
+            <button className={`nav-button ${isShown ? '' : 'showbar'}`} onClick={toggleShow}>
+                <i class="fa-solid fa-bars"></i>
+            </button>
             <div className={`black-background ${isShown ? 'show' : ''}`} onClick={toggleShow}>
                 <div className={`list-bar ${isShown ? 'show-abc' : ''}`}>
                     <div className = 'list-bar-objects'>
@@ -32,7 +34,7 @@ export function ListBar() {
                         </a>
                     </div>
                     <div className = 'list-bar-objects'>
-                        <a href="/" className="not-Logo">
+                        <a href="/comments" className="not-Logo">
                         <p>Comments</p>
                         </a>
                     </div>

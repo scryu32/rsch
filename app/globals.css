@@ -2,6 +2,9 @@ div {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
 /*layout*/
 
 .navbar {
@@ -618,3 +621,152 @@ div {
   }
 }
 
+
+/* 코멘트 기능*/
+
+.list-bg{
+  box-sizing: border-box;
+  position: absolute;
+  margin-top: 100px;
+  background: rgb(249, 250, 255);
+  padding: 10px;
+  width: 100%;
+}
+.list-item{
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 5px;
+  box-shadow: rgb(224, 224, 224) 0px 2px 4px 0px;
+}
+.list-item h4{
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0;
+}
+.list-item p{
+  color: grey;
+  margin : 5px 0px;
+  opacity: 1;
+  transition: all 1s;
+}
+.contianer-commmm a{
+  color: black;
+}
+.list-item:hover{
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 5px;
+  box-shadow: rgb(187, 187, 187) 0px 2px 4px 0px;
+  background-color: #d8d8d8;
+}
+
+/*글 상세 목록*/
+
+.detail-container-box {
+  position: absolute;
+  background-color: rgb(241, 241, 241);
+  width: 90%;
+  left: 5%;
+  top: 20%;
+  text-align: center;
+  height: auto;
+  border-radius: 5px;
+}
+
+.edit-btn {
+  margin: 10px;
+  padding: 3px;
+}
+
+.dlbtn {
+  margin: 5px;
+  background-color: rgb(255, 167, 167);
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.edbtn {
+  margin: 5px;
+  background-color: rgb(167, 255, 167);
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.Write-btn {
+  position: fixed;
+  z-index: 500;
+  padding: 10px;
+  background-color: chartreuse;
+  text-align: center;
+  justify-content: center;
+  width: 45px;
+  border: 2px solid rgb(98, 196, 0);
+  border-radius: 7px;
+  right: 5%;
+  bottom: 5%;
+  color: black;
+}
+
+.Write-btn:hover {
+  background-color: rgb(98, 196, 0);
+  border: 2px solid rgb(50, 100, 0);
+}
+
+.posting-box {
+  position: relative;
+  background-color: #eee;
+  top: 15vh;
+  left: 10%;
+  width: 80%;
+  height: 70vh;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.title-input-box {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.content-input-box {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  gap: 10px;
+  height: 50vh;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  resize: none;
+}
+
+.submit-box {
+  position: absolute;
+  right: 3%;
+  bottom: 3%;
+}

@@ -128,6 +128,17 @@ a {
 }
 /*main page*/
 
+
+.projectcard{
+  position: absolute;
+  top: 100px;
+  left: 37.5%;
+  right: 37.5%;
+  text-decoration: none;
+  color: black;
+}
+
+
 .logo-img img {
   vertical-align: middle; 
   padding-left: 10px;
@@ -379,10 +390,6 @@ a {
     height: 750px;
   }
 
-  .projectcard {
-    left: 10%;
-  }
-
   .first-card {
     position: absolute;
     left: 10%;
@@ -414,6 +421,11 @@ a {
     font-size: 25px;
     z-index: 2;
     top: 45%;
+  }
+
+  .projectcard {
+    left: 10%;
+    right: 10%;
   }
 
 }
@@ -474,7 +486,6 @@ a {
   }
   
   .card {
-    width: 80%;
     height: 580px;
   }
 
@@ -511,11 +522,15 @@ a {
     top: 70%;
   }
 
+  .projectcard {
+    left: 10%;
+    right: 10%;
+  }
+
 }
 
 @media (max-width: 450px) {
   .card {
-    width: 80%;
     height: 520px;
   }
   .back-doc-box {
@@ -527,8 +542,7 @@ a {
 
 @media (max-width: 400px) {
   .card {
-    width: 80%;
-    height: 530px;
+    height: 500px;
   }
   .card p{
     font-size: 15px;
@@ -554,6 +568,10 @@ a {
   .ChatBotGOGO {
     top: 70%;
   }
+  .projectcard {
+    left: 10%;
+    right: 10%;
+  }
 
 }
 
@@ -565,14 +583,6 @@ a {
   position: relative;
 }
 
-.projectcard{
-  position: absolute;
-  top: 100px;
-  left: 37.5%;
-  right: 37.5%;
-  text-decoration: none;
-  color: black;
-}
 
 
 /*챗봇*/

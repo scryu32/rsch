@@ -15,7 +15,7 @@ export function ListBar() {
         <div>
             <button className={`nav-button ${isShown ? '' : 'showbar'}`} onClick={toggleShow}>list</button>
             <div className={`black-background ${isShown ? 'show' : ''}`} onClick={toggleShow}>
-                <div className={`list-bar ${isShown ? 'show' : ''}`}>
+                <div className={`list-bar ${isShown ? 'show-abc' : ''}`}>
                     <div className = 'list-bar-objects'>
                         <a className="logo-img" href="/">
                             <Image src={hutao} width="50" height="50" className="img-logo-list" alt="Logo-img"></Image>

@@ -56,7 +56,6 @@ div {
   width: 100vw;
   position: absolute;
   height: 110vh;
-  background-color: rgba(0, 0, 0, 0.329);
   display: none;
 }
 
@@ -86,8 +85,36 @@ div {
 .show {
   display: block;
   right: 0px;
-  transition: all 1s;
+  animation-name: black-back;
+  animation-duration: 1s;
+  background-color: rgba(0, 0, 0, 0.192);
 }
+
+.show-abc {
+  display: block;
+  animation-name: Barmove;
+  animation-duration: 1s;
+  right: 0px;
+}
+
+@keyframes Barmove{
+  0% {
+    transform: translateX(calc(50vw));
+  }
+  100% {
+    transform: translateX(calc(0vw));
+  }
+}
+
+@keyframes black-back {
+  0% {
+    background-color: rgba(0, 0, 0, 0.048);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.192);
+  }
+}
+
 
 .img-logo-list {
   padding-top:50px;
@@ -176,11 +203,13 @@ div {
   width: 23%;
   height: 700px;
   background-color: #eee;
-  z-index: 5;
+  z-index: 10;
   text-align: center;
   border-radius: 15px;
   border: 1px solid black;
   transition: all 1s;
+  position: relative;
+  transform-style: preserve-3d;
 }
 
 .card:hover {
@@ -195,14 +224,14 @@ div {
 
 .card img{
   position: relative;
-  top: -50px;
+  top: -40px;
   width: 80%;
   transition: all 0.5s;
 }
 
 .card p {
   position: relative;
-  top: -50px;
+  top: -40px;
   padding: 15px;
 }
 
@@ -223,6 +252,45 @@ div {
 .third-card {
   position: absolute;
   left: 69%;
+}
+
+.inner-card {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.front-card {
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  transform: rotateY(0deg);
+}
+
+.back-card {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  top: 0;
+  background-color: #eee;
+  position: absolute;
+  transform: rotateY(180deg);
+  border-radius: 15px;
+  backface-visibility: hidden;
+  z-index: 50;
+}
+
+.back-card img {
+  top: 15%;
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+.back-card {
+  transform: rotateY(180deg);
 }
 
 .ChatBotGOGO {
@@ -438,10 +506,14 @@ div {
 
 }
 
-@media (max-width: 431px) {
+@media (max-width: 450px) {
   .card {
     width: 80%;
     height: 520px;
+  }
+  .back-doc-box {
+    top: 400px;
+    height: 3000px;
   }
 
 }
@@ -449,7 +521,7 @@ div {
 @media (max-width: 400px) {
   .card {
     width: 80%;
-    height: 500px;
+    height: 530px;
   }
   .card p{
     font-size: 15px;
@@ -489,8 +561,8 @@ div {
 .projectcard{
   position: absolute;
   top: 100px;
-  left: 0%;
-  right: 0%;
+  left: 37.5%;
+  right: 37.5%;
   text-decoration: none;
   color: black;
 }

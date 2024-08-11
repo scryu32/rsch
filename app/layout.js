@@ -9,7 +9,6 @@ import { ListBar } from "./listbar";
 import "./ff/css/all.min.css"
 import { Analytics } from "@vercel/analytics/react"
 
-
 export default async function RootLayout({ children }) {
   let session = await getServerSession(authOptions);
   return (

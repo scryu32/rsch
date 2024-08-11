@@ -98,18 +98,20 @@ export default function ChatBox() {
                                 backgroundColor: msg.role === "user" ? '#d1e7dd' : '#f8d7da',
                                 color: msg.role === "user" ? '#0f5132' : '#721c24',
                                 maxWidth: '70%',
-                                textAlign: 'left',
-                                whiteSpace: 'pre-warp'
+                                textAlign: 'left'
                             }}
                         >
-                        
-                             { msg.content}
+                            {msg.role === "user" ? (
+                                msg.content
+                            ) : (
+                                <div dangerouslySetInnerHTML={{ __html: msg.content }} />
+                            )}
                         </div>
                     </div>
                 ))}
                 {loading && (
                     <div style={{ textAlign: 'center', marginBottom: '10px', color: '#888' }}>
-                        메시지를 입력하는중...(응답이 없으면 다시 질문해주세요)
+                        메시지를 입력하는중...
                     </div>
                 )}
                 <div ref={messagesEndRef} />

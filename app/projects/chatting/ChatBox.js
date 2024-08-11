@@ -109,7 +109,7 @@ export default function ChatBox() {
                 ))}
                 {loading && (
                     <div style={{ textAlign: 'center', marginBottom: '10px', color: '#888' }}>
-                        메시지를 입력하는중...
+                        메시지를 입력하는중...(응답이 없으면 다시 질문해주세요)
                     </div>
                 )}
                 <div ref={messagesEndRef} />

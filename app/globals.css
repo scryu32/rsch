@@ -1,0 +1,792 @@
+div {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+/*layout*/
+
+.navbar {
+  width: 100vw;
+  height: 100px;
+  background-color: #eee;
+  box-sizing: border-box;
+  display: flex; 
+  position: fixed;
+  z-index: 100;
+}
+
+.navbar ul {
+  display: flex;
+  padding: 0;
+}
+
+.navbar li {
+  list-style-type: none;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s ease;
+  display: inline-block; 
+}
+
+.navbar a:hover {
+  color: brown;
+  transform: scale(1.25);
+}
+
+.nav {
+  display:block;
+}
+
+.nav-button {
+  position: absolute;
+  display: none;
+  float: right;
+  padding: 5px;
+  width: 50px;
+  z-index: 300;
+}
+
+.black-background {
+  width: 100vw;
+  position: absolute;
+  height: 110vh;
+  display: none;
+}
+
+.list-bar {
+  background-color: rgb(94, 94, 94);
+  position: absolute;
+  width: 230px;
+  height: 110vh;
+  z-index: 100;
+  right: -230px;
+  display: none;
+  transition: all 0.5s;
+}
+
+.list-bar div{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.list-bar button{
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.show {
+  display: block;
+  right: 0px;
+  animation-name: black-back;
+  animation-duration: 1s;
+  background-color: rgba(0, 0, 0, 0.192);
+}
+
+.show-abc {
+  display: block;
+  animation-name: Barmove;
+  animation-duration: 1s;
+  right: 0px;
+}
+
+@keyframes Barmove{
+  0% {
+    transform: translateX(calc(50vw));
+  }
+  100% {
+    transform: translateX(calc(0vw));
+  }
+}
+
+@keyframes black-back {
+  0% {
+    background-color: rgba(0, 0, 0, 0.048);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.192);
+  }
+}
+
+
+.img-logo-list {
+  padding-top:50px;
+}
+
+.showbar {
+  display: none;
+}
+/*main page*/
+
+
+.projectcard{
+  position: absolute;
+  top: 100px;
+  left: 37.5%;
+  right: 37.5%;
+  text-decoration: none;
+  color: black;
+}
+
+
+.logo-img img {
+  vertical-align: middle; 
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+.main-page {
+  width: 100%;
+  height: 2000px;
+  background-color: antiquewhite;
+}
+
+.back-ground-box {
+  position: relative;
+  height: calc(100vh - 80px);
+  padding-top: 80px;
+  color: white;
+  text-align: center;
+  z-index: 2;
+}
+
+.back-ground-box h4{
+  font-size: 100px;
+  position: fixed;
+  z-index: 2;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  width: 80%;
+}
+
+.back-ground-box p{
+  font-size: 30px;
+  color: white;
+  position: fixed;
+  z-index: 2;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.back-ground-box::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/Images/BackGround.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(50%);
+  z-index: 1;
+}
+
+/*카드 및 설명 작성*/
+
+.back-doc-box {
+  position: absolute;
+  width: 100%;
+  height: 1200px;
+  background-color: white;
+  z-index: 3;
+  top: 1000px;
+}
+
+.doc-box {
+  display: flex;
+}
+
+.card {
+  margin-top: 100px;
+  width: 23%;
+  height: 700px;
+  background-color: #eee;
+  z-index: 10;
+  text-align: center;
+  border-radius: 15px;
+  border: 1px solid black;
+  transition: all 1s;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.card:hover {
+  background-color: rgb(214, 214, 214);
+}
+
+.card h4{
+  position: relative;
+  top: -20px;
+  font-size: 30px;
+}
+
+.card img{
+  position: relative;
+  top: -40px;
+  width: 80%;
+  transition: all 0.5s;
+}
+
+.card p {
+  position: relative;
+  top: -40px;
+  padding: 15px;
+}
+
+.CardImage:hover {
+  transform: scale(1.05);
+}
+
+.first-card {
+  position: absolute;
+  left: 7.75%;
+}
+
+.second-card {
+  position: absolute;
+  left: 38.5%;
+}
+
+.third-card {
+  position: absolute;
+  left: 69%;
+}
+
+.inner-card {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.front-card {
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  transform: rotateY(0deg);
+}
+
+.back-card {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  top: 0;
+  background-color: #eee;
+  position: absolute;
+  transform: rotateY(180deg);
+  border-radius: 15px;
+  backface-visibility: hidden;
+  z-index: 50;
+}
+
+.back-card img {
+  top: 15%;
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+.back-card {
+  transform: rotateY(180deg);
+}
+
+.ChatBotGOGO {
+  position: absolute;
+  left: 30%;
+  right: 30%;
+  width: 40%;
+  height: 110px;
+  z-index: 5;
+  top: 70%;
+  text-align: center;
+}
+
+.ChatBotGOGO h4 {
+  font-size: 30px;
+}
+
+.ChatBotGOGO button {
+  padding: 10px 20px;
+  background-color: burlywood;
+  border-radius: 15px;
+  transition: all 0.5s;
+}
+
+.ChatBotGOGO button:hover {
+  padding: 10px 20px;
+  background-color: rgb(177, 148, 110);
+  border-radius: 15px;
+  transform: scale(1.3);
+  cursor: pointer;
+}
+
+@media (max-width: 2400px) {
+  .back-doc-box {
+    top: 800px;
+  }
+
+  .card {
+    height: 580px;
+  }
+
+}
+
+
+@media (max-width: 1800px) {
+  .back-doc-box {
+    top: 900px;
+  }
+
+  .card {
+    height: 540px;
+  }
+
+}
+
+
+@media (max-width: 1440px) {
+  .back-doc-box {
+    top: 800px;
+  }
+
+  .card {
+    height: 540px;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  .back-doc-box {
+    top: 700px;
+    height: 1500px;
+  }
+}
+
+@media (max-width: 870px) {
+  .back-doc-box {
+    top: 700px;
+    height: 3000px;
+  }
+  
+  .card {
+    width: 80%;
+    height: 750px;
+  }
+
+  .first-card {
+    position: absolute;
+    left: 10%;
+  }
+  
+  .second-card {
+    position: absolute;
+    left: 10%;
+    top: 850px;
+  }
+  
+  .third-card {
+    position: absolute;
+    left: 10%;
+    top: 1700px;
+  }
+  
+  .ChatBotGOGO {
+    top: 87%;
+  }
+
+  .back-ground-box h4{
+    font-size: 50px;
+    top: 40%;
+    width: 80%;
+  }
+  
+  .back-ground-box p{
+    font-size: 25px;
+    z-index: 2;
+    top: 45%;
+  }
+
+  .projectcard {
+    left: 10%;
+    right: 10%;
+  }
+
+}
+
+@media (max-width: 775px) {
+  .card {
+    height: 700px;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-button {
+    display: none;
+  }
+  .card {
+    height: 650px;
+  }
+  .back-ground-box h4{
+    font-size: 45px;
+  }
+  .nav p, nav h4{
+    display: none;
+  }
+  .nav button{
+    display: block;
+    padding: 5px 10px;
+    position: absolute;
+  }
+  .nav-button {
+    top: 35%;
+    right: 25px;
+  }
+  .loggg {
+    top: 35%;
+    right: 80px;
+  }
+  .showbar {
+    display: block;
+  }
+}
+
+@media (max-width: 630px) {
+  .card {
+    height: 610px;
+  }
+  .back-ground-box h4{
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .back-doc-box {
+    top: 500px;
+    height: 3000px;
+  }
+  .doc-box {
+    display: block;
+  }
+  
+  .card {
+    height: 580px;
+  }
+
+  .back-ground-box h4{
+    font-size: 30px;
+    top: 30%;
+    width: 80%;
+  }
+  
+  .back-ground-box p{
+    font-size: 15px;
+    z-index: 2;
+    top: 35%;
+  }
+
+  .first-card {
+    position: absolute;
+    left: 10%;
+  }
+  
+  .second-card {
+    position: absolute;
+    left: 10%;
+    top: 680px;
+  }
+  
+  .third-card {
+    position: absolute;
+    left: 10%;
+    top: 1360px;
+  }
+  
+  .ChatBotGOGO {
+    top: 70%;
+  }
+
+  .projectcard {
+    left: 10%;
+    right: 10%;
+  }
+
+}
+
+@media (max-width: 450px) {
+  .card {
+    height: 520px;
+  }
+  .back-doc-box {
+    top: 400px;
+    height: 3000px;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .card {
+    height: 500px;
+  }
+  .card p{
+    font-size: 15px;
+  }
+
+  .first-card {
+    position: absolute;
+    left: 10%;
+  }
+  
+  .second-card {
+    position: absolute;
+    left: 10%;
+    top: 600px;
+  }
+  
+  .third-card {
+    position: absolute;
+    left: 10%;
+    top: 1200px;
+  }
+  
+  .ChatBotGOGO {
+    top: 70%;
+  }
+  .projectcard {
+    left: 10%;
+    right: 10%;
+  }
+
+}
+
+/*프로젝트 페이지 */
+
+.container {
+  padding: 5px;
+  margin: auto;
+  position: relative;
+}
+
+
+
+/*챗봇*/
+
+.chatting-card {
+  width: 80vw;
+  vertical-align: bottom;
+  position: relative;
+  text-align: center;
+  margin: auto;
+  margin-top: 130px;
+  height: 700px;
+  background-color: #eee;
+  border-radius: 15px;
+  border: 1px solid black;
+}
+
+.send-box {
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  left: 0px;
+}
+
+.input-box {
+  width: 75%;
+}
+
+.submit-btn {
+  width: 15%;
+}
+
+.messages-box {
+  height: 95%;
+}
+
+@media (max-width : 500px) {
+  .chatting-card {
+    height: 500px;
+  }
+}
+
+@media (max-width : 430px) {
+  .input-box {
+    width: 65%;
+  }
+  
+  .submit-btn {
+    width: 20%;
+  }
+}
+
+@media (max-width : 370px) {
+  .chatting-card {
+    height: 430px;
+  }
+}
+
+
+/* 코멘트 기능*/
+
+.list-bg{
+  box-sizing: border-box;
+  position: absolute;
+  margin-top: 100px;
+  background: rgb(249, 250, 255);
+  padding: 10px;
+  width: 100%;
+}
+.list-item{
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 5px;
+  box-shadow: rgb(224, 224, 224) 0px 2px 4px 0px;
+}
+.list-item h4{
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0;
+}
+.list-item p{
+  color: grey;
+  margin : 5px 0px;
+  opacity: 1;
+  transition: all 1s;
+}
+.contianer-commmm a{
+  color: black;
+}
+.list-item:hover{
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 5px;
+  box-shadow: rgb(187, 187, 187) 0px 2px 4px 0px;
+  background-color: #d8d8d8;
+}
+
+/*글 상세 목록*/
+
+.detail-container-box {
+  position: absolute;
+  background-color: rgb(241, 241, 241);
+  width: 90%;
+  left: 5%;
+  top: 20%;
+  text-align: center;
+  height: auto;
+  border-radius: 5px;
+}
+
+.edit-btn {
+  margin: 10px;
+  padding: 3px;
+}
+
+.dlbtn {
+  margin: 5px;
+  background-color: rgb(255, 167, 167);
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.edbtn {
+  margin: 5px;
+  background-color: rgb(167, 255, 167);
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.Write-btn {
+  position: fixed;
+  z-index: 500;
+  padding: 10px;
+  background-color: chartreuse;
+  text-align: center;
+  justify-content: center;
+  width: 45px;
+  border: 2px solid rgb(98, 196, 0);
+  border-radius: 7px;
+  right: 5%;
+  bottom: 5%;
+  color: black;
+}
+
+.Write-btn:hover {
+  background-color: rgb(98, 196, 0);
+  border: 2px solid rgb(50, 100, 0);
+}
+
+.posting-box {
+  position: relative;
+  background-color: #eee;
+  top: 15vh;
+  left: 10%;
+  width: 80%;
+  height: 70vh;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.title-input-box {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.content-input-box {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  gap: 10px;
+  height: 50vh;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  resize: none;
+}
+
+.submit-box {
+  position: absolute;
+  right: 3%;
+  bottom: 3%;
+}

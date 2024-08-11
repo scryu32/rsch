@@ -9,8 +9,7 @@ export default function Projects(){
                     <img src="../HuTao/HuTao_emoji1.png"></img>
                     <p>첫번째 프로젝트, 인공지능 챗봇입니다.<br/>
                     가상의 게임 캐릭터의 성격을 가진 챗봇입니다.<br/>
-                    아직 제대로 훈련 안됨<br/>
-                    로그인 안되면 크롬으로 ㄱㄱ
+                    아직 제대로 훈련 안됨
                     </p>
                 </div>
             </Link>

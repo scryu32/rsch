@@ -25,7 +25,8 @@ export default function MainPage(){
           <Link href="/projects">
             <button>챗봇 바로가기</button>
           </Link>
-          <p>화면깨짐이나 버그는 제보 ㄱㄱ</p>
+          <p>크롬으로 접속해야 오류 안생김<br/>
+             화면깨짐이나 버그는 제보 ㄱㄱ</p>
         </div>
       </div>
 

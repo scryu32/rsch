@@ -1,15 +1,14 @@
-"use client"
+"use client";
 
 import { useState, useEffect, useRef } from 'react';
 
 export default function ChatBox() {
     const [input, setInput] = useState('');
     const [messages, setMessages] = useState([]);
+    const [loading, setLoading] = useState(false);
     const messagesEndRef = useRef(null);
 
-    // MathJax 스크립트를 로드하고, messages가 업데이트될 때마다 수식을 렌더링
     useEffect(() => {
-        // MathJax 스크립트 로드
         const script = document.createElement('script');
         script.id = "MathJax-script";
         script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js";
@@ -18,17 +17,15 @@ export default function ChatBox() {
 
         script.onload = () => {
             if (window.MathJax) {
-                window.MathJax.typesetPromise(); // 초기 렌더링
+                window.MathJax.typesetPromise();
             }
         };
 
         return () => {
-            // 컴포넌트 언마운트 시 스크립트 제거
             document.head.removeChild(script);
         };
     }, []);
 
-    // messages가 업데이트될 때마다 MathJax 렌더링
     useEffect(() => {
         if (window.MathJax) {
             window.MathJax.typesetPromise();
@@ -42,12 +39,11 @@ export default function ChatBox() {
         e.preventDefault();
     
         const userMessage = { role: 'user', content: input };
-        
         setInput('');
+        setMessages((prevMessages) => [...prevMessages, userMessage]);
+        setLoading(true);
     
         try {
-            setMessages((prevMessages) => [...prevMessages, userMessage]);
-    
             const sessionRes = await fetch('/api/checklogin');
     
             if (!sessionRes.ok) {
@@ -55,6 +51,7 @@ export default function ChatBox() {
                 if (sessionRes.status === 401) {
                     const assistantMessage = { role: 'assistant', content: '로그인 하세요.(크롬에서만 로그인 잘됨)' };
                     setMessages((prevMessages) => [...prevMessages, assistantMessage]);
+                    setLoading(false);
                     return;
                 }
                 throw new Error(sessionData.message || 'Failed to check login status');
@@ -83,6 +80,8 @@ export default function ChatBox() {
             }
         } catch (error) {
             console.error('Error:', error);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -99,17 +98,20 @@ export default function ChatBox() {
                                 backgroundColor: msg.role === "user" ? '#d1e7dd' : '#f8d7da',
                                 color: msg.role === "user" ? '#0f5132' : '#721c24',
                                 maxWidth: '70%',
-                                textAlign: 'left'
+                                textAlign: 'left',
+                                whiteSpace: 'pre-warp'
                             }}
                         >
-                            {msg.role === "user" ? (
-                                msg.content
-                            ) : (
-                                <div dangerouslySetInnerHTML={{ __html: msg.content }} />
-                            )}
+                        
+                             { msg.content}
                         </div>
                     </div>
                 ))}
+                {loading && (
+                    <div style={{ textAlign: 'center', marginBottom: '10px', color: '#888' }}>
+                        메시지를 입력하는중...
+                    </div>
+                )}
                 <div ref={messagesEndRef} />
             </div>
 

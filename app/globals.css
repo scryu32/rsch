@@ -635,6 +635,11 @@ a {
   }
 }
 
+@media (max-width : 370px) {
+  .chatting-card {
+    height: 430px;
+  }
+}
 
 /* 코멘트 기능*/
 

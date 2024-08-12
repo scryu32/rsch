@@ -98,7 +98,8 @@ export default function ChatBox() {
                                 backgroundColor: msg.role === "user" ? '#d1e7dd' : '#f8d7da',
                                 color: msg.role === "user" ? '#0f5132' : '#721c24',
                                 maxWidth: '70%',
-                                textAlign: 'left'
+                                textAlign: 'left',
+                                marginBottom: '15px'
                             }}
                         >
                             {msg.role === "user" ? (

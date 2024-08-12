@@ -8,10 +8,15 @@ export default function ChatBox() {
     const [loading, setLoading] = useState(false);
     const messagesEndRef = useRef(null);
 
+    // Load MathJax script only once
     useEffect(() => {
+        if (document.getElementById('MathJax-script')) {
+            return; // MathJax script already loaded
+        }
+
         const script = document.createElement('script');
-        script.id = "MathJax-script";
-        script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js";
+        script.id = 'MathJax-script';
+        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
         script.async = true;
         document.head.appendChild(script);
 
@@ -26,14 +31,16 @@ export default function ChatBox() {
         };
     }, []);
 
+    // Update MathJax typesetting when messages or input change
     useEffect(() => {
         if (window.MathJax) {
-            window.MathJax.typesetPromise();
+            window.MathJax.typesetPromise().then(() => {
+                if (messagesEndRef.current) {
+                    messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
         }
-        if (messagesEndRef.current) {
-            messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
-        }
-    }, [messages]);
+    }, [messages, input]); // Add input as a dependency
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -87,10 +94,10 @@ export default function ChatBox() {
 
     return (
         <>
-            <div className="messages-box" style={{overflowY: 'scroll', padding: '10px' }}>
+            <div className="messages-box" style={{ overflowY: 'scroll', padding: '10px' }}>
                 {messages.map((msg, index) => (
                     <div key={index} className={`message ${msg.role}`} style={{ marginBottom: '10px', display: 'flex', justifyContent: msg.role === "user" ? 'flex-end' : 'flex-start' }}>
-                        <img src='../HuTao/HuTao_emoji9.png' style={{width:'40px', height:'40px', display: msg.role === "user" ? 'none' : 'block', padding:'3px', boxSizing:'border-box'}}></img>
+                        <img src='../HuTao/HuTao_emoji9.png' style={{ width: '40px', height: '40px', display: msg.role === "user" ? 'none' : 'block', padding: '3px', boxSizing: 'border-box' }} alt="emoji" />
                         <div 
                             style={{
                                 padding: '10px',
